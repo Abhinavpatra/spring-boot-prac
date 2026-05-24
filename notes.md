@@ -23,3 +23,40 @@ Packajing JAr
 3. spring web(enables us to use REST apis)
 4. Spring data JPA : acts like ORM, converts it to swl db
 5. openAPI spec: for documentation
+
+## Layout
+.idea: IDE specific folder
+.mvn : maven properties, gives us all the registry installation details  : npmjs equivalent
+mvnw : present at the project level, so that everytime we dont have to install
+src/ : source code
+pom.xml : in xml format, the package.json equivalent, has all the dependencies mentioned here
+
+src/
+    - main/ : 
+    - test/ : write your unit test cases
+    - main/resources/application.yaml : config of springboot application, allows you to enable flags, add db, credentials, config setup
+    - main/java/folder/AppName.java : This is the main class with the one main file
+
+When you run it, a target folder is created, and all the .class files are stored there now.
+
+It will show an error, with a description mentioned there :
+here we have to add db url as well 
+
+```yaml
+spring:
+    application:
+        name: CreatorStore
+    datasource:
+        url:
+        username:
+        password:    
+```
+For springboot, we can add 
+## DB
+Direct
+Session Pooler, not Driect connection 
+Type: JDBC
+
+Add url, remove username and password from url, put them in the username and password fields
+
+got to maven repository, get dotenv, paste it in the pom.xml dependency folder
