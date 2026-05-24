@@ -1,5 +1,6 @@
 package com.example.createstore.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
@@ -7,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 // adding annotations for adding functionalities
 // then we can also add annotations at the field level
@@ -40,4 +42,8 @@ public class Product {
     private Integer stockQuantity;
 
     // TODO: relations
+    @JsonIgnore // adding this prop, ensures that we dont get all the orders associated with the product
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItems;
+
 }

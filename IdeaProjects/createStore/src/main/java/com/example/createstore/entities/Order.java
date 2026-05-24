@@ -6,6 +6,7 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.List;
 
 // TODO: add extra validations to all the properties of the class
 
@@ -41,5 +42,9 @@ public class Order {
     public void prePersist(){
         this.createdAt = LocalDateTime.now();
     }
+
+    // relations
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
 
 }

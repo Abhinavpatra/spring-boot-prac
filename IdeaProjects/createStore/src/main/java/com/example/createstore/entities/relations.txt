@@ -1,0 +1,5 @@
+1. One order will have many order_items:
+    a) Add a @oneToMany in order
+    b) Add a @ManyToOne in OrderItem
+    c) Create Join Column to OrderItem
+2. One Product will belong to many OrderItems

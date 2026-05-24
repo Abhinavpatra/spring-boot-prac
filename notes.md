@@ -81,4 +81,5 @@ Follow uniform structure, create a package in the folder inside the java folder,
 
 
 This one allows for adding Minimum and Max
-- Add  
+- Add 
+Hibernate handles all the SQL conversion, adds constrains and migrates the DB properly. 
