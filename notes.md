@@ -60,3 +60,25 @@ Type: JDBC
 Add url, remove username and password from url, put them in the username and password fields
 
 got to maven repository, get dotenv, paste it in the pom.xml dependency folder
+
+then load dotenv in the Main src/main/java/AppName.java file: 
+```java
+ Dotenv dotenv = Dotenv.configure()  .ignoreIfMissing().load();
+        dotenv.entries().forEach((entry)->System.setProperty(
+                entry.getKey(), entry.getValue()
+    ));
+```
+Then update datasource : url: ${DATABASE_URL}
+with this kind of representation.
+
+## Adding new files
+Follow uniform structure, create a package in the folder inside the java folder, ex: entities
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+
+This one allows for adding Minimum and Max
+- Add  
